@@ -15,7 +15,26 @@
             <li><a href="#">About</a></li>
             <li><a href="#">Gallery</a></li>
             <li><a href="#">Contact</a></li>
+        </ul> 
+        <ul class="nav-links--mobile" id="hidden">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
+        <div class="hamburger__container">
+            <img 
+                src="menu-hamburger.svg"
+                alt="hamburger-icon" 
+                class="hamburger"
+            >
+            <img 
+                src="close.svg"
+                alt="close-icon" 
+                class="close"
+                id="hidden"
+            >
+        </div>
     </div>
 
     <!-- Hero section -->
@@ -103,5 +122,25 @@
         </div>
         <h6>Copyright &copy; 2021 Zuri Training.</h6>
     </div>
+    <!-- JAVASCRIPT -->
+    <script>
+        const hamburger = document.querySelector('.hamburger'),
+                navLinks = document.querySelector('.nav-links--mobile'),
+                close = document.querySelector('.close');
+
+        close.addEventListener( "click", (e) => {
+            navLinks.id ='hidden';
+            hamburger.id = ' ';
+            close.id = 'hidden'
+        });
+
+        hamburger.addEventListener( "click", (e) => {
+                navLinks.id =' ';
+                hamburger.id = 'hidden';
+                close.id = ' '
+        } );
+
+    </script>
+    <!-- JAVASCRIPT -->
 </body>
 </html>

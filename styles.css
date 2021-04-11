@@ -13,6 +13,8 @@ div.nav-bar {
     padding: 1rem 6rem;
     width: 100vw;
     background: #304353;
+    color: white;
+    /* border: 2px solid red; */
 }
 
 div.logo {
@@ -20,10 +22,10 @@ div.logo {
     color: #bcc3c7;
 }
 
-ul.nav-links {
+ul.nav-links, ul.nav-links--mobile {
     display: flex;
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
 }
 
 ul li {
@@ -33,20 +35,81 @@ ul li {
 }
 
 ul li a {
+    display: inline-block;
     text-decoration: none;
     color: #88949B;
     padding: 0.5vw;
 }
 
 ul li a:hover {
-    color: #304353;
-    background: #fff;
-    padding: 0.5rem;
+    color: #fff;
+    text-decoration: underline;
+    /* background: #fff; */
+    /* padding: 0.5rem; */
+}
+
+.hamburger__container, ul.nav-links--mobile {
+    /* border: 2px solid red; */
+    display: none;
+    /* touch-action: none; */
+}
+
+.hamburger, .close {
+    width: 35px;
+
+}
+
+@media (max-width: 768px) {
+    div.nav-bar {
+        padding: 1rem 2rem;
+    }
+
+    #hidden {
+        display: none;
+    }
+
+    ul.nav-links {
+        display: none;
+    }
+
+    ul.nav-links--mobile {
+        /* border: 2px solid red; */
+        display: inline-block;
+        background-color: #fff;
+        position: absolute;
+        left: 50%; top: 4rem;
+        transform: translateX(-50%);
+
+        padding: 1.5rem 0;
+
+        width: 100%;
+        max-width: 400px;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    ul li a {
+        margin: .5em;
+    }
+    
+    ul li a:hover {
+        color: #304353;
+        text-decoration: underline;
+    }
+
+    .hamburger__container {
+        /* border: 2px solid red; */
+        display: block;
+        cursor: pointer;
+    }
 }
 
 div.hero-section {
     background: #304353;
-    padding: 10rem;
+    padding: 10rem 5rem;
 }
 
 div.hero-content-heading {
@@ -89,7 +152,7 @@ div.hero-content-btn a {
 
 div.hero-background {
     background: #f0f0f0;
-    padding: 10rem;
+    padding: 7.5rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,14 +161,15 @@ div.hero-background {
 div.background {
     background: #fff;
     box-shadow: 2px 2px 15px 0 rgb(135 135 135 / 40%);
-    padding: 15px 40px;
-    width: 550px;
-    height: 220px;
+    padding: 2.5rem 40px;
+    max-width: 550px;
+    /* height: 220px; */
     position: relative;
+    /* border: 2px solid red; */
 }
 
 div.background h4 {
-    padding: 2rem;
+    padding-bottom: 2rem;
     color: #555657;
     font-size: 1rem;
     letter-spacing: 2px;
@@ -119,6 +183,18 @@ div.background p {
     letter-spacing: 2px;
 }
 
+@media (max-width: 768px) {
+
+    div.background {
+        padding: 1.5rem;
+        width: 75%;
+    }
+
+    div.background p {
+        padding: 0;
+    }
+}
+
 div.hero-background-pos {
     position: absolute;
     right: 0px;
@@ -128,6 +204,12 @@ div.hero-background-pos {
     height: 140px;
     border-radius: 50%;
     box-shadow: 2px 2px 15px 0 rgb(135 135 135 / 40%);
+}
+
+@media (max-width: 768px) {
+    div.hero-background-pos {
+        display: none;
+    }
 }
 
 div.snapshot-team {
@@ -144,6 +226,9 @@ div.snapshot-team h2 {
 }
 
 div.snapshot-team p {
+    max-width: 450px;
+    width: 90%;
+    margin: 0 auto;
     color: #A6A5AA;
     font-size: 1rem;
     letter-spacing: 2px;
@@ -160,7 +245,9 @@ div.snapshot-box {
 
 div.snapshot-box-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* justify-content: space-between; */
+    flex-flow: row wrap;
 }
 
 div.box1 {
@@ -345,3 +432,18 @@ div.footer h6 {
     font-size: 1rem;
     padding-top: 6rem;
 }
+
+@media (max-width: 768px) {
+
+    div.footer-input {
+        flex-direction: column;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+        width: 100%;
+        margin: .5em 0;
+        /* display: block; */
+    }
+
+}
+
